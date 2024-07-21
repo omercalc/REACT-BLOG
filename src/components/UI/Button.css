@@ -1,0 +1,55 @@
+/* Button base styles */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+ 
+  .btn-EKLE {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-EKLE:hover {
+    background-color: #0056b3;
+  }
+  
+
+  .btn-GUNCELLE {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-GUNCELLE:hover {
+    background-color: #218838;
+  }
+  
+  .btn-SIL {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-SIL:hover {
+    background-color: #c82333;
+  }
+  
+
+  .btn-sm {
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 100px;
+    height: 35px;
+  }
+  
+ 
+  .btn-md {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  
+  
