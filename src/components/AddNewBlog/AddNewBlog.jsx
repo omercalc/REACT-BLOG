@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 import "./AddNewBlog.css";
 import NewBlogInput from "../NewBlogInput/NewBlogInput";
 
@@ -12,6 +12,7 @@ const AddNewBlog = (props) => {
     newsReporter: "",
     newsDate: "",
   });
+ 
 
   const subjectChangeHandler = ({ target: { name, value } }) => {
     setNewsData({ ...newsData, [name]: value });
@@ -26,8 +27,11 @@ const AddNewBlog = (props) => {
       reporter: newsData.newsReporter,
       date: newsData.newsDate,
     };
+    
 
     props.setData((prevState) => [...prevState, newsDataToSend]);
+    
+    
 
     props.addBlogAndSort("");
     setNewsData({

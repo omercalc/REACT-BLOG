@@ -1,7 +1,7 @@
 import BlogItem from "../BlogItem/BlogItem";
 import { blogData } from "../../data/blogData";
-import AddNewBlog from "../AddNewBlog/AddNewBlog";
-import { useState, useEffect } from "react";
+import NewsModal from "../UI/NewsModal/NewsModal";
+import { useState } from "react";
 import "./BlogList.css";
 
 const BlogList = () => {
@@ -23,9 +23,11 @@ const BlogList = () => {
       const titleMatches =
         blog.title &&
         blog.title.toLowerCase().includes(searchText.toLowerCase());
+
       const reporterMatches =
         blog.reporter &&
         blog.reporter.toLowerCase().includes(searchAuthor.toLowerCase());
+
       const dateMatches =
         !searchDate ||
         new Date(blog.date).toDateString() ===
@@ -38,10 +40,6 @@ const BlogList = () => {
   const sortDataByDate = (data) => {
     return data.sort((a, b) => new Date(b.date) - new Date(a.date));
   };
-
-  useEffect(() => {
-    setData(sortDataByDate(blogData));
-  }, []);
 
   const addBlogAndSort = (newBlog) => {
     setData((prevData) => sortDataByDate([...prevData, newBlog]));
@@ -65,30 +63,42 @@ const BlogList = () => {
     {
       type: "date",
       name: "searchDate",
+      placeholder: "Tarihte ara...",
       value: searchInput.searchDate,
       className: "search-input",
     },
   ];
 
   return (
-    <section className="govde content-between gap-40">
-      <div className="haber-ekleme m-20 flex-row">
-        <AddNewBlog setData={setData} addBlogAndSort={addBlogAndSort} />
-        <div className="search">
-          {searchInputs.map((input, index) => (
+    <section className="govde content-between gap-10 ">
+      <div className="modal absolute left-50 top-40 m-12 transform -translate-y-1/2 p-12 flex-col ">
+        <NewsModal setData={setData} addBlogAndSort={addBlogAndSort} />
+      </div>
+
+      <h1 className="p-28 font-bold text-2xl font-#56687a">
+        LÜTFEN ARAMAK İSTEDİĞİNZ KRİTERLERİ VEYA <br /> HABER EKLEMEK İÇİN BUTONA BASINIZ
+      </h1>
+
+      <div className="search grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10   ">
+        {searchInputs.map((input, index) => (
+          <div key={index} className="flex flex-col ">
+            <label htmlFor={input.name} className="mb-1 text-gray-700">
+              {input.placeholder}
+            </label>
             <input
-              key={index}
+              id={input.name}
               type={input.type}
               name={input.name}
               placeholder={input.placeholder}
               value={input.value}
               onChange={handleFilterChange}
-              className={input.className}
+              className="p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-      <div className="haberler grid md:grid-cols-3">
+
+      <div className="haberler grid gap-2 sm:grid-cols-2 md:grid-cols-3 relative ">
         {filterBlogs().map((blog) => (
           <BlogItem
             key={blog.resim}

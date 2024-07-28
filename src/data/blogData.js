@@ -137,7 +137,7 @@ export const blogData = [
   },
   {
     "id": 18,
-    "resim": "https://101akademi.com/wp-content/uploads/2022/02/blockchain-teknolojisi.jpg",
+    "resim": "https://bctr.org/wp-content/uploads/2019/09/blockchain-technology.jpg",
     "title": "Blockchain Teknolojisi",
     "content": "Blockchain teknolojisi, sadece finansal sektörde değil, birçok farklı alanda da kullanılmaya başlandı.",
     "reporter": "Betül Sarı",
