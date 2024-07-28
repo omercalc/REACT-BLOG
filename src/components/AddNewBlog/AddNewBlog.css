@@ -1,12 +1,11 @@
 .container {
-  max-width: 650px !important;
+  max-width: 650px; /* Removed !important for better control */
   width: 90%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 28px;
-  margin: 0 28px;
+  margin: 50px auto; /* Centered the container horizontally and provided top margin */
   border-radius: 10px;
   box-shadow: inset -2px 2px 2px white;
-  margin-top: 50px;
 }
 
 .form-title {
