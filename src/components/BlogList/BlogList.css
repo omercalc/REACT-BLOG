@@ -4,6 +4,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+.haberler {
+    display: grid; /* Add this to ensure grid layout works */
+    grid-gap: 10px; /* Optional: For spacing between grid items */
+    padding: 10px; /* Optional: To add padding around the grid */
 }
 
 @media(max-width: 800px){
