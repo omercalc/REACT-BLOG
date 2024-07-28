@@ -1,8 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../UI/Button/Button";
-import "./AddNewBlog.css";
 import NewBlogInput from "../NewBlogInput/NewBlogInput";
+import "./AddNewBlog.css";
 
 const AddNewBlog = (props) => {
   const [newsData, setNewsData] = useState({

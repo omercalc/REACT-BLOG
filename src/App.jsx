@@ -1,7 +1,7 @@
 import BlogList from './components/BlogList/BlogList'
 import Nav from './components/Nav/Nav'
-import './App.css'
 import Footer from './components/Footer/Footer'
+import './App.css'
 
 
 
